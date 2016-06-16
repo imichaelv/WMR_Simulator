@@ -92,5 +92,10 @@ namespace wms_simulator.Controller
                 Console.WriteLine(System.DateTime.Now + type + " " + "" + message);
             }
         }
+
+        public static void Print(string message)
+        {
+            Console.WriteLine(System.DateTime.Now + " " + message);
+        }
     }
 }

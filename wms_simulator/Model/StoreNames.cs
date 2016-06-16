@@ -11,15 +11,16 @@ namespace wms_simulator.Model
     class StoreNames
     {
         private string[] stores = new string[] { "Bart Smid", "Intertoys", "Speelboom", "Speel-O-Theek", "Speelgoed land", "Steengoed", "Top1Toys","Toy\"R\"Us", "Wehkamp", "Bol.com" };
-        private string[] locations = new string[] {"Groningen", "Assen","Leeuwarden","Zwolle","Utrecht","Enchedee","Almere","Amsterdam","Den Haag","Rotterdam","Zaandam","Emmen","Eindhoven","Tilburg","Goes","Breda","Nijmegen","Apeldoorn"};
-        private int[,] usedCombinations;
+        private string[] locations = new string[] { "Amsterdam", "Rotterdam", "Den Haag", "Utrecht", "Eindhoven", "Tilburg", "Groningen", "Almere", "Breda", "Nijmegen", "Enschede", "Apeldoorn", "Haarlem", "Amersfoort", "Zaanstad", "Arnhem", "Haarlemmermeer", "'s Hertogenbosch", "Zoetermeer", "Zwolle", "Maastricht", "Leiden", "Dordrecht", "Ede", "Emmen", "Westland", "Venlo", "Delft", "Deventer", "Leeuwarden", "Alkmaar", "Sittard-Geleen", "Helmond", "Heerlen", "Hilversum", "Oss", "Amstelveen", "Súdwest-Fryslân", "Hengelo", "Purmerend", "Roosendaal", "Schiedam", "Lelystad", "Alphen aan den Rijn", "Leidschendam-Voorburg", "Almelo", "Spijkenisse", "Hoorn", "Gouda", "Vlaardingen", "Assen", "Bergen op Zoom", "Capelle aan den IJssel", "Veenendaal", "Katwijk", "Zeist", "Nieuwegein", "Roermond", "Den Helder", "Doetinchem", "Hoogeveen", "Terneuzen", "Middelburg" };
         private int maxStores;
-        private int count = 0;
+        private ArrayList availableStoreList, usedStoreList;
 
         public StoreNames()
         {
-            usedCombinations = new int[stores.Length,locations.Length];
             maxStores = stores.Length * locations.Length;
+            availableStoreList = new ArrayList();
+            loadStores();
+            usedStoreList = new ArrayList();
         }
         /// <summary>
         /// gets a new Store
@@ -27,9 +28,9 @@ namespace wms_simulator.Model
         /// <returns></returns>
         public string getNewStore()
         {
-            if (count != maxStores)
+            if (availableStoreList.Count!=0)
             {
-                return newStore(null);
+                return newStore();
             }
 
             else {
@@ -39,34 +40,34 @@ namespace wms_simulator.Model
         }
 
         /// <summary>
-        /// Returns a new Store, checks if the store isnt mensioned bevore returns the string, else checks again till no more stores are left.
+        /// Returns a new Store, puts it in the list 
         /// </summary>
         /// <param name="lastName"></param>
         /// <returns></returns>
-        private string newStore(string lastName)
+        private string newStore()
         {
-            if (lastName == null)
-            {
-                Random random = new Random();
-                int storeId = random.Next(0, stores.Length);
+            Random rand = new Random();
 
-                int locationId = random.Next(0, locations.Length);
-
-                if (usedCombinations[storeId, locationId] != 0)
-                {
-                    usedCombinations[storeId, locationId] = 1;
-                    return stores[storeId] + " " + locations[locationId];
-                }
-            }
-
-            return newStore(lastName);
+            int id = rand.Next(0, availableStoreList.Count);
+            string name = (string) availableStoreList[id];
+            availableStoreList.RemoveAt(id);
+            usedStoreList.Add(name);
+            Console.WriteLine("Available stores: " + availableStoreList.Count);
+            return name;
         }
 
+        /// <summary>
+        /// Creates a storeList 
+        /// </summary>
         private void loadStores()
         {
-            for(int i = 0; i < (stores.Length * locations.Length); i++)
+            availableStoreList = new ArrayList();
+            for(int i = 0; i < stores.Length; i++)
             {
-                //TODO load all in array and update new Store
+                for(int j = 0; j < locations.Length; j++)
+                {
+                    availableStoreList.Add(stores[i] + " " + locations[j]);
+                }
             }
         }
     }

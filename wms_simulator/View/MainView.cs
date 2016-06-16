@@ -13,6 +13,13 @@ namespace wms_simulator.View
 {
     public partial class MainView : Form
     {
+        public int simulationSpeed { get; set; }
+        public int supplierAmmount { get; set; }
+        public int supplierProcessSpeed { get; set; }
+        public int storeAmount { get; set; }
+        public int storeProcessSpeed { get; set; }
+        public bool suppliers { get; set; }
+        public bool stores { get; set; }
         private MainController mainController;
         public MainView(MainController mainController)
         {
@@ -23,13 +30,15 @@ namespace wms_simulator.View
         
         private void startButton_Click(object sender, EventArgs e)
         {
-            mainController.startSimulating();
+            mainController.startSimulating(this);
             mainController.sendMessage("Running simulator");
+            StartButton.BackColor = Color.Violet;
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            this.suppliers = SuppliersBox.Checked;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,7 +53,33 @@ namespace wms_simulator.View
 
         private void speedbar_Scroll(object sender, EventArgs e)
         {
+            SimulatorSpeedDisplay.Text = ""+ (this.simulationSpeed = speedbar.Value);
+            
+        }
 
+        private void AmountSuppliersBar_Scroll(object sender, EventArgs e)
+        {
+            SupplierAmountDisplay.Text =""+( this.supplierAmmount = AmountSuppliersBar.Value);
+        }
+
+        private void SupplierProcessSpeedBar_Scroll(object sender, EventArgs e)
+        {
+            SupplierProcessSpeedDisplay.Text =""+(this.supplierProcessSpeed = SupplierProcessSpeedBar.Value);
+        }
+
+        private void AmountStoresBar_Scroll(object sender, EventArgs e)
+        {
+            StoresAmmountDisplay.Text = ""+ (this.storeAmount = (AmountStoresBar.Value*10));
+        }
+
+        private void StoresProcessSpeedBar_Scroll(object sender, EventArgs e)
+        {
+            StoresProcessSpeedDisplay.Text= ""+( this.storeProcessSpeed = StoresProcessSpeedBar.Value);
+        }
+
+        private void StoresBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this.stores = StoresBox.Checked;
         }
     }
 }

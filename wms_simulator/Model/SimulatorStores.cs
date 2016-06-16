@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace wms_simulator.Model
 {
-    class SimulatorStores
+    public class SimulatorStores
     {
         private Dictionary<string, Thread> storesList = new Dictionary<string, Thread>();
         private StoreNames storeNames;
@@ -24,8 +24,15 @@ namespace wms_simulator.Model
             Store store = new Store(name);
             Thread newTread = new Thread(new ThreadStart(store.ThreadStart));
             storesList.Add(name, newTread);
+            Console.WriteLine("New Store Running");
         }
-        
+        public void addStores(int amount)
+        {
+            for(int i =0; i < amount; i++)
+            {
+                addStores();
+            }
+        }
 
     }
 }
