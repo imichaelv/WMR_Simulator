@@ -26,7 +26,9 @@ namespace wms_simulator.Controller
 
         public void startSimulating(View.MainView mainView)
         {
-            simulatorStores.addStores(mainView.storeAmount);
+            initializer.saveSettings(mainView);
+            simulatorStores.reset();
+            simulatorStores.addStores(mainView);
         }
 
         public void sendMessage(string message)

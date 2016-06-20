@@ -290,9 +290,9 @@
             this.SupplierProcessSpeedDisplay.AutoSize = true;
             this.SupplierProcessSpeedDisplay.Location = new System.Drawing.Point(208, 265);
             this.SupplierProcessSpeedDisplay.Name = "SupplierProcessSpeedDisplay";
-            this.SupplierProcessSpeedDisplay.Size = new System.Drawing.Size(13, 13);
+            this.SupplierProcessSpeedDisplay.Size = new System.Drawing.Size(35, 13);
             this.SupplierProcessSpeedDisplay.TabIndex = 16;
-            this.SupplierProcessSpeedDisplay.Text = "0";
+            this.SupplierProcessSpeedDisplay.Text = "Direct";
             // 
             // StoresAmmountDisplay
             // 
@@ -308,18 +308,19 @@
             this.StoresProcessSpeedDisplay.AutoSize = true;
             this.StoresProcessSpeedDisplay.Location = new System.Drawing.Point(208, 393);
             this.StoresProcessSpeedDisplay.Name = "StoresProcessSpeedDisplay";
-            this.StoresProcessSpeedDisplay.Size = new System.Drawing.Size(13, 13);
+            this.StoresProcessSpeedDisplay.Size = new System.Drawing.Size(35, 13);
             this.StoresProcessSpeedDisplay.TabIndex = 18;
-            this.StoresProcessSpeedDisplay.Text = "0";
+            this.StoresProcessSpeedDisplay.Text = "Direct";
             // 
             // SimulatorSpeedDisplay
             // 
             this.SimulatorSpeedDisplay.AutoSize = true;
+            this.SimulatorSpeedDisplay.ForeColor = System.Drawing.SystemColors.ControlText;
             this.SimulatorSpeedDisplay.Location = new System.Drawing.Point(208, 137);
             this.SimulatorSpeedDisplay.Name = "SimulatorSpeedDisplay";
-            this.SimulatorSpeedDisplay.Size = new System.Drawing.Size(13, 13);
+            this.SimulatorSpeedDisplay.Size = new System.Drawing.Size(52, 13);
             this.SimulatorSpeedDisplay.TabIndex = 19;
-            this.SimulatorSpeedDisplay.Text = "0";
+            this.SimulatorSpeedDisplay.Text = "RealTime";
             // 
             // MainView
             // 

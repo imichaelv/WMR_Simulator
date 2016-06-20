@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wms_simulator;
+using wms_simulator.View;
 
 namespace wms_simulator.Controller
 {
@@ -29,6 +30,11 @@ namespace wms_simulator.Controller
                 Console.WriteLine(wmsSimulatorPath + " Exists");
             }
             
+        }
+
+        internal void saveSettings(MainView mainView)
+        {
+            throw new NotImplementedException();
         }
 
         private void InitializeNew()
@@ -97,5 +103,6 @@ namespace wms_simulator.Controller
         {
             Console.WriteLine(System.DateTime.Now + " " + message);
         }
+
     }
 }

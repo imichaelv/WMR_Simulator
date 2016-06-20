@@ -53,7 +53,7 @@ namespace wms_simulator.View
 
         private void speedbar_Scroll(object sender, EventArgs e)
         {
-            SimulatorSpeedDisplay.Text = ""+ (this.simulationSpeed = speedbar.Value);
+            SimulatorSpeedDisplay.Text = simulatingSpeedText(this.simulationSpeed = speedbar.Value);
             
         }
 
@@ -64,7 +64,7 @@ namespace wms_simulator.View
 
         private void SupplierProcessSpeedBar_Scroll(object sender, EventArgs e)
         {
-            SupplierProcessSpeedDisplay.Text =""+(this.supplierProcessSpeed = SupplierProcessSpeedBar.Value);
+            SupplierProcessSpeedDisplay.Text =simulatingTime(this.supplierProcessSpeed = SupplierProcessSpeedBar.Value);
         }
 
         private void AmountStoresBar_Scroll(object sender, EventArgs e)
@@ -74,12 +74,73 @@ namespace wms_simulator.View
 
         private void StoresProcessSpeedBar_Scroll(object sender, EventArgs e)
         {
-            StoresProcessSpeedDisplay.Text= ""+( this.storeProcessSpeed = StoresProcessSpeedBar.Value);
+            StoresProcessSpeedDisplay.Text= simulatingTime( this.storeProcessSpeed = StoresProcessSpeedBar.Value);
         }
 
         private void StoresBox_CheckedChanged(object sender, EventArgs e)
         {
             this.stores = StoresBox.Checked;
         }
+
+        private string simulatingTime(int value)
+        {
+            switch (value)
+            {
+                case 0:
+                    return "Direct";
+                case 1:
+                    return "30 minuten";
+                case 2:
+                    return "45 minuten";
+                case 3:
+                    return "90 minuten";
+                case 4:
+                    return "3 uur";
+                case 5:
+                    return "6 uur";
+                case 6:
+                    return "12 uur";
+                case 7:
+                    return "24 uur";
+                case 8:
+                    return "2 dagen";
+                case 9:
+                    return "3,5 dagen";
+                case 10:
+                    return "1 week";
+            }
+            return null;
+        }
+
+        private string simulatingSpeedText(int val)
+        {
+            switch (val)
+            {
+                case 0:
+                    return "RealTime";
+                case 1:
+                    return "+30 minuten";
+                case 2:
+                    return "+45 minuten";
+                case 3:
+                    return "+90 minuten";
+                case 4:
+                    return "+3 uur";
+                case 5:
+                    return "+6 uur";
+                case 6:
+                    return "+12 uur";
+                case 7:
+                    return "+24 uur";
+                case 8:
+                    return "+2 dagen";
+                case 9:
+                    return "+3,5 dagen";
+                case 10:
+                    return "+1 week";
+            }
+            return null;
+        }
+        
     }
 }

@@ -52,7 +52,6 @@ namespace wms_simulator.Model
             string name = (string) availableStoreList[id];
             availableStoreList.RemoveAt(id);
             usedStoreList.Add(name);
-            Console.WriteLine("Available stores: " + availableStoreList.Count);
             return name;
         }
 
