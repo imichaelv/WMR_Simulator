@@ -58,7 +58,6 @@
     <Compile Include="API\ApiCallInterface.cs" />
     <Compile Include="Controller\Initializer.cs" />
     <Compile Include="Controller\MainController.cs" />
-    <Compile Include="Factory.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Model\SimulatorStores.cs" />
     <Compile Include="Model\Store.cs" />
