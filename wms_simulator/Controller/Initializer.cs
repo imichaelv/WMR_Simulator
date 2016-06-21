@@ -34,7 +34,13 @@ namespace wms_simulator.Controller
 
         internal void saveSettings(MainView mainView)
         {
-            throw new NotImplementedException();
+            Properties.Settings.Default.SuppliersBox = mainView.suppliers;
+            Properties.Settings.Default.SupplierAmount = mainView.supplierAmmount;
+            Properties.Settings.Default.SupplierProcessSpeed = mainView.supplierProcessSpeed;
+            Properties.Settings.Default.StoresBox = mainView.stores;
+            Properties.Settings.Default.StoresAmount = mainView.storeAmount;
+            Properties.Settings.Default.StoresProcessSpeed = mainView.storeProcessSpeed;
+            Properties.Settings.Default.SimulatingSpeed = mainView.simulationSpeed;
         }
 
         private void InitializeNew()
@@ -44,31 +50,7 @@ namespace wms_simulator.Controller
         }
 
 
-        
-        /// <summary>
-        /// ResetPreferences resets the settings back to default settings when startup.
-        /// </summary>
-        private void ResetPreferences()
-        {
-            Console.WriteLine(System.DateTime.Now+" Resetting Preferences");
-
-            Properties.Settings.Default.ServerAddress   = "localhost";
-            Properties.Settings.Default.ServerPort      = "9090";
-            Properties.Settings.Default.UserName        = "wmsUser";
-            Properties.Settings.Default.PassWord        = "wmsPass";
-            Console.WriteLine(System.DateTime.Now + " Successfull resetted Preferences");
-
-
-            /*Properties.Settings.Default["ServerAddress"] = "localhost";
-            Properties.Settings.Default["ServerPort"] = "9090";
-            Properties.Settings.Default["UserName"] = "wmsUser";
-            Properties.Settings.Default["PassWord"] = "wmsPass";
-            //Properties.Settings.Default.Save;
-            //XmlTextReader reader = new XmlTextReader(wmsSimulatorPath);*/
-            
-
-
-        }
+       
 
         public void setStatusLabel(System.Windows.Forms.ToolStripStatusLabel statusLabel)
         {

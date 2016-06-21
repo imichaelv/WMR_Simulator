@@ -56,6 +56,7 @@
             this.StoresAmmountDisplay = new System.Windows.Forms.Label();
             this.StoresProcessSpeedDisplay = new System.Windows.Forms.Label();
             this.SimulatorSpeedDisplay = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.speedbar)).BeginInit();
@@ -103,8 +104,9 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -117,7 +119,7 @@
             // helpMenuToolStripMenuItem
             // 
             this.helpMenuToolStripMenuItem.Name = "helpMenuToolStripMenuItem";
-            this.helpMenuToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.helpMenuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpMenuToolStripMenuItem.Text = "Help Menu";
             // 
             // aToolStripMenuItem
@@ -144,7 +146,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(0, 27);
+            this.StartButton.Location = new System.Drawing.Point(186, 406);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(136, 30);
             this.StartButton.TabIndex = 2;
@@ -157,7 +159,7 @@
             this.SuppliersBox.AutoSize = true;
             this.SuppliersBox.Checked = true;
             this.SuppliersBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SuppliersBox.Location = new System.Drawing.Point(12, 63);
+            this.SuppliersBox.Location = new System.Drawing.Point(12, 37);
             this.SuppliersBox.Name = "SuppliersBox";
             this.SuppliersBox.Size = new System.Drawing.Size(69, 17);
             this.SuppliersBox.TabIndex = 3;
@@ -171,7 +173,7 @@
             this.StoresBox.AutoSize = true;
             this.StoresBox.Checked = true;
             this.StoresBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.StoresBox.Location = new System.Drawing.Point(12, 87);
+            this.StoresBox.Location = new System.Drawing.Point(87, 37);
             this.StoresBox.Name = "StoresBox";
             this.StoresBox.Size = new System.Drawing.Size(56, 17);
             this.StoresBox.TabIndex = 4;
@@ -183,16 +185,17 @@
             // 
             this.speedbar.AccessibleDescription = "sdsad";
             this.speedbar.AccessibleName = "";
-            this.speedbar.Location = new System.Drawing.Point(12, 137);
+            this.speedbar.Location = new System.Drawing.Point(12, 85);
             this.speedbar.Name = "speedbar";
             this.speedbar.Size = new System.Drawing.Size(190, 45);
             this.speedbar.TabIndex = 5;
+            this.speedbar.Value = Properties.Settings.Default.SimulatingSpeed;
             this.speedbar.Scroll += new System.EventHandler(this.speedbar_Scroll);
             // 
             // SimulateSpeedLabel
             // 
             this.SimulateSpeedLabel.AutoSize = true;
-            this.SimulateSpeedLabel.Location = new System.Drawing.Point(15, 121);
+            this.SimulateSpeedLabel.Location = new System.Drawing.Point(15, 69);
             this.SimulateSpeedLabel.Name = "SimulateSpeedLabel";
             this.SimulateSpeedLabel.Size = new System.Drawing.Size(89, 13);
             this.SimulateSpeedLabel.TabIndex = 6;
@@ -203,17 +206,18 @@
             // 
             this.AmountSuppliersBar.AccessibleDescription = "sdsad";
             this.AmountSuppliersBar.AccessibleName = "";
-            this.AmountSuppliersBar.Location = new System.Drawing.Point(12, 201);
+            this.AmountSuppliersBar.Location = new System.Drawing.Point(12, 149);
             this.AmountSuppliersBar.Name = "AmountSuppliersBar";
             this.AmountSuppliersBar.Size = new System.Drawing.Size(190, 45);
             this.AmountSuppliersBar.TabIndex = 7;
+            this.AmountSuppliersBar.Value = Properties.Settings.Default.SupplierAmount;
             this.AmountSuppliersBar.Scroll += new System.EventHandler(this.AmountSuppliersBar_Scroll);
             // 
             // AmountStoresBar
             // 
             this.AmountStoresBar.AccessibleDescription = "sdsad";
             this.AmountStoresBar.AccessibleName = "";
-            this.AmountStoresBar.Location = new System.Drawing.Point(12, 329);
+            this.AmountStoresBar.Location = new System.Drawing.Point(12, 277);
             this.AmountStoresBar.Maximum = 63;
             this.AmountStoresBar.Name = "AmountStoresBar";
             this.AmountStoresBar.Size = new System.Drawing.Size(190, 45);
@@ -223,7 +227,7 @@
             // AmountSuppliersLabel
             // 
             this.AmountSuppliersLabel.AutoSize = true;
-            this.AmountSuppliersLabel.Location = new System.Drawing.Point(15, 185);
+            this.AmountSuppliersLabel.Location = new System.Drawing.Point(15, 133);
             this.AmountSuppliersLabel.Name = "AmountSuppliersLabel";
             this.AmountSuppliersLabel.Size = new System.Drawing.Size(89, 13);
             this.AmountSuppliersLabel.TabIndex = 9;
@@ -232,7 +236,7 @@
             // AmountStoresLabel
             // 
             this.AmountStoresLabel.AutoSize = true;
-            this.AmountStoresLabel.Location = new System.Drawing.Point(15, 313);
+            this.AmountStoresLabel.Location = new System.Drawing.Point(15, 261);
             this.AmountStoresLabel.Name = "AmountStoresLabel";
             this.AmountStoresLabel.Size = new System.Drawing.Size(76, 13);
             this.AmountStoresLabel.TabIndex = 10;
@@ -242,7 +246,7 @@
             // 
             this.SupplierProcessSpeedBar.AccessibleDescription = "sdsad";
             this.SupplierProcessSpeedBar.AccessibleName = "";
-            this.SupplierProcessSpeedBar.Location = new System.Drawing.Point(12, 265);
+            this.SupplierProcessSpeedBar.Location = new System.Drawing.Point(12, 213);
             this.SupplierProcessSpeedBar.Name = "SupplierProcessSpeedBar";
             this.SupplierProcessSpeedBar.Size = new System.Drawing.Size(190, 45);
             this.SupplierProcessSpeedBar.TabIndex = 11;
@@ -251,7 +255,7 @@
             // SupplierProcesSpeedLabel
             // 
             this.SupplierProcesSpeedLabel.AutoSize = true;
-            this.SupplierProcesSpeedLabel.Location = new System.Drawing.Point(15, 249);
+            this.SupplierProcesSpeedLabel.Location = new System.Drawing.Point(15, 197);
             this.SupplierProcesSpeedLabel.Name = "SupplierProcesSpeedLabel";
             this.SupplierProcesSpeedLabel.Size = new System.Drawing.Size(120, 13);
             this.SupplierProcesSpeedLabel.TabIndex = 12;
@@ -260,7 +264,7 @@
             // StoresProcessSpeed
             // 
             this.StoresProcessSpeed.AutoSize = true;
-            this.StoresProcessSpeed.Location = new System.Drawing.Point(15, 377);
+            this.StoresProcessSpeed.Location = new System.Drawing.Point(15, 325);
             this.StoresProcessSpeed.Name = "StoresProcessSpeed";
             this.StoresProcessSpeed.Size = new System.Drawing.Size(112, 13);
             this.StoresProcessSpeed.TabIndex = 14;
@@ -270,7 +274,7 @@
             // 
             this.StoresProcessSpeedBar.AccessibleDescription = "sdsad";
             this.StoresProcessSpeedBar.AccessibleName = "";
-            this.StoresProcessSpeedBar.Location = new System.Drawing.Point(12, 393);
+            this.StoresProcessSpeedBar.Location = new System.Drawing.Point(12, 341);
             this.StoresProcessSpeedBar.Name = "StoresProcessSpeedBar";
             this.StoresProcessSpeedBar.Size = new System.Drawing.Size(190, 45);
             this.StoresProcessSpeedBar.TabIndex = 13;
@@ -279,7 +283,7 @@
             // SupplierAmountDisplay
             // 
             this.SupplierAmountDisplay.AutoSize = true;
-            this.SupplierAmountDisplay.Location = new System.Drawing.Point(208, 201);
+            this.SupplierAmountDisplay.Location = new System.Drawing.Point(208, 149);
             this.SupplierAmountDisplay.Name = "SupplierAmountDisplay";
             this.SupplierAmountDisplay.Size = new System.Drawing.Size(13, 13);
             this.SupplierAmountDisplay.TabIndex = 15;
@@ -288,7 +292,7 @@
             // SupplierProcessSpeedDisplay
             // 
             this.SupplierProcessSpeedDisplay.AutoSize = true;
-            this.SupplierProcessSpeedDisplay.Location = new System.Drawing.Point(208, 265);
+            this.SupplierProcessSpeedDisplay.Location = new System.Drawing.Point(208, 213);
             this.SupplierProcessSpeedDisplay.Name = "SupplierProcessSpeedDisplay";
             this.SupplierProcessSpeedDisplay.Size = new System.Drawing.Size(35, 13);
             this.SupplierProcessSpeedDisplay.TabIndex = 16;
@@ -297,7 +301,7 @@
             // StoresAmmountDisplay
             // 
             this.StoresAmmountDisplay.AutoSize = true;
-            this.StoresAmmountDisplay.Location = new System.Drawing.Point(208, 329);
+            this.StoresAmmountDisplay.Location = new System.Drawing.Point(208, 277);
             this.StoresAmmountDisplay.Name = "StoresAmmountDisplay";
             this.StoresAmmountDisplay.Size = new System.Drawing.Size(13, 13);
             this.StoresAmmountDisplay.TabIndex = 17;
@@ -306,7 +310,7 @@
             // StoresProcessSpeedDisplay
             // 
             this.StoresProcessSpeedDisplay.AutoSize = true;
-            this.StoresProcessSpeedDisplay.Location = new System.Drawing.Point(208, 393);
+            this.StoresProcessSpeedDisplay.Location = new System.Drawing.Point(208, 341);
             this.StoresProcessSpeedDisplay.Name = "StoresProcessSpeedDisplay";
             this.StoresProcessSpeedDisplay.Size = new System.Drawing.Size(35, 13);
             this.StoresProcessSpeedDisplay.TabIndex = 18;
@@ -316,17 +320,28 @@
             // 
             this.SimulatorSpeedDisplay.AutoSize = true;
             this.SimulatorSpeedDisplay.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SimulatorSpeedDisplay.Location = new System.Drawing.Point(208, 137);
+            this.SimulatorSpeedDisplay.Location = new System.Drawing.Point(208, 85);
             this.SimulatorSpeedDisplay.Name = "SimulatorSpeedDisplay";
             this.SimulatorSpeedDisplay.Size = new System.Drawing.Size(52, 13);
             this.SimulatorSpeedDisplay.TabIndex = 19;
             this.SimulatorSpeedDisplay.Text = "RealTime";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(87, 406);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 29);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.SimulatorSpeedDisplay);
             this.Controls.Add(this.StoresProcessSpeedDisplay);
             this.Controls.Add(this.StoresAmmountDisplay);
@@ -394,5 +409,6 @@
         private System.Windows.Forms.Label StoresAmmountDisplay;
         private System.Windows.Forms.Label StoresProcessSpeedDisplay;
         private System.Windows.Forms.Label SimulatorSpeedDisplay;
+        private System.Windows.Forms.Button button1;
     }
 }

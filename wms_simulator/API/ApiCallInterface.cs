@@ -10,10 +10,10 @@ namespace wms_simulator.API
 {
     interface ApiCallInterface
     {
+
+        void runRequest();
         void StartApi();
-        string getPage();
+        HttpResponseMessage getPage();
+        HttpResponseMessage post();
     }
-
-   
-
 }

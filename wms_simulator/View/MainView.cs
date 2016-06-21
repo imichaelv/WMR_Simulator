@@ -141,6 +141,16 @@ namespace wms_simulator.View
             }
             return null;
         }
-        
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form settings = new Settings();
+            settings.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mainController.reset(this);
+        }
     }
 }

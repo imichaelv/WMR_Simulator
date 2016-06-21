@@ -35,5 +35,12 @@ namespace wms_simulator.Controller
         {
             initializer.PrintConsole(message);
         }
+
+        public void reset(View.MainView mainView)
+        {
+            simulatorStores.reset();
+            mainView.suppliers = false; //Properties.Settings.Default.SuppliersBox;
+
+        }
     }
 }
