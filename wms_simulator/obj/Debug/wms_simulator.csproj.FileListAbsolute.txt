@@ -15,3 +15,7 @@ D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\obj\
 D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\obj\Debug\wms_simulator.View.MainView.resources
 D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\obj\Debug\wms_simulator.csproj.GenerateResource.Cache
 D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\obj\Debug\wms_simulator.View.Settings.resources
+D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\bin\Debug\Newtonsoft.Json.dll
+D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\bin\Debug\System.Net.Http.Formatting.dll
+D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\bin\Debug\Newtonsoft.Json.xml
+D:\Users\pjvan\OneDrive\Code\Thema2.4_Simulator\WMR_Simulator\wms_simulator\bin\Debug\System.Net.Http.Formatting.xml

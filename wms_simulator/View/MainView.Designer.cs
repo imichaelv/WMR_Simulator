@@ -104,7 +104,7 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -119,7 +119,7 @@
             // helpMenuToolStripMenuItem
             // 
             this.helpMenuToolStripMenuItem.Name = "helpMenuToolStripMenuItem";
-            this.helpMenuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpMenuToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.helpMenuToolStripMenuItem.Text = "Help Menu";
             // 
             // aToolStripMenuItem
@@ -189,7 +189,7 @@
             this.speedbar.Name = "speedbar";
             this.speedbar.Size = new System.Drawing.Size(190, 45);
             this.speedbar.TabIndex = 5;
-            this.speedbar.Value = Properties.Settings.Default.SimulatingSpeed;
+            this.speedbar.Value = global::wms_simulator.Properties.Settings.Default.SimulatingSpeed;
             this.speedbar.Scroll += new System.EventHandler(this.speedbar_Scroll);
             // 
             // SimulateSpeedLabel
@@ -210,7 +210,7 @@
             this.AmountSuppliersBar.Name = "AmountSuppliersBar";
             this.AmountSuppliersBar.Size = new System.Drawing.Size(190, 45);
             this.AmountSuppliersBar.TabIndex = 7;
-            this.AmountSuppliersBar.Value = Properties.Settings.Default.SupplierAmount;
+            this.AmountSuppliersBar.Value = global::wms_simulator.Properties.Settings.Default.SupplierAmount;
             this.AmountSuppliersBar.Scroll += new System.EventHandler(this.AmountSuppliersBar_Scroll);
             // 
             // AmountStoresBar
@@ -229,9 +229,9 @@
             this.AmountSuppliersLabel.AutoSize = true;
             this.AmountSuppliersLabel.Location = new System.Drawing.Point(15, 133);
             this.AmountSuppliersLabel.Name = "AmountSuppliersLabel";
-            this.AmountSuppliersLabel.Size = new System.Drawing.Size(89, 13);
+            this.AmountSuppliersLabel.Size = new System.Drawing.Size(79, 13);
             this.AmountSuppliersLabel.TabIndex = 9;
-            this.AmountSuppliersLabel.Text = "Amount Suppliers";
+            this.AmountSuppliersLabel.Text = "Delivery Speed";
             // 
             // AmountStoresLabel
             // 
@@ -285,9 +285,9 @@
             this.SupplierAmountDisplay.AutoSize = true;
             this.SupplierAmountDisplay.Location = new System.Drawing.Point(208, 149);
             this.SupplierAmountDisplay.Name = "SupplierAmountDisplay";
-            this.SupplierAmountDisplay.Size = new System.Drawing.Size(13, 13);
+            this.SupplierAmountDisplay.Size = new System.Drawing.Size(69, 13);
             this.SupplierAmountDisplay.TabIndex = 15;
-            this.SupplierAmountDisplay.Text = "0";
+            this.SupplierAmountDisplay.Text = "Teleportation";
             // 
             // SupplierProcessSpeedDisplay
             // 

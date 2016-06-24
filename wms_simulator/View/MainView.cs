@@ -59,7 +59,7 @@ namespace wms_simulator.View
 
         private void AmountSuppliersBar_Scroll(object sender, EventArgs e)
         {
-            SupplierAmountDisplay.Text =""+( this.supplierAmmount = AmountSuppliersBar.Value);
+            SupplierAmountDisplay.Text =simulatingDeliverySpeed( this.supplierAmmount = AmountSuppliersBar.Value);
         }
 
         private void SupplierProcessSpeedBar_Scroll(object sender, EventArgs e)
@@ -69,7 +69,8 @@ namespace wms_simulator.View
 
         private void AmountStoresBar_Scroll(object sender, EventArgs e)
         {
-            StoresAmmountDisplay.Text = ""+ (this.storeAmount = (AmountStoresBar.Value*10));
+            //TODO undo outcomment
+            StoresAmmountDisplay.Text = "" + (this.storeAmount = (AmountStoresBar.Value*10)); 
         }
 
         private void StoresProcessSpeedBar_Scroll(object sender, EventArgs e)
@@ -89,23 +90,23 @@ namespace wms_simulator.View
                 case 0:
                     return "Direct";
                 case 1:
-                    return "30 minuten";
+                    return "30 minutes";
                 case 2:
-                    return "45 minuten";
+                    return "45 minutes";
                 case 3:
-                    return "90 minuten";
+                    return "90 minutes";
                 case 4:
-                    return "3 uur";
+                    return "3 hours";
                 case 5:
-                    return "6 uur";
+                    return "6 hours";
                 case 6:
-                    return "12 uur";
+                    return "12 hours";
                 case 7:
-                    return "24 uur";
+                    return "24 hours";
                 case 8:
-                    return "2 dagen";
+                    return "2 days";
                 case 9:
-                    return "3,5 dagen";
+                    return "3,5 days";
                 case 10:
                     return "1 week";
             }
@@ -119,25 +120,55 @@ namespace wms_simulator.View
                 case 0:
                     return "RealTime";
                 case 1:
-                    return "+30 minuten";
+                    return "+30 minutes";
                 case 2:
-                    return "+45 minuten";
+                    return "+45 minutes";
                 case 3:
-                    return "+90 minuten";
+                    return "+90 minutes";
                 case 4:
-                    return "+3 uur";
+                    return "+3 hours";
                 case 5:
-                    return "+6 uur";
+                    return "+6 hours";
                 case 6:
-                    return "+12 uur";
+                    return "+12 hours";
                 case 7:
-                    return "+24 uur";
+                    return "+24 hours";
                 case 8:
-                    return "+2 dagen";
+                    return "+2 days";
                 case 9:
-                    return "+3,5 dagen";
+                    return "+3,5 days";
                 case 10:
                     return "+1 week";
+            }
+            return null;
+        }
+
+        private string simulatingDeliverySpeed(int val)
+        {
+            switch (val)
+            {
+                case 0:
+                    return "Teleportation";
+                case 1:
+                    return "Fiber Cable Upload";
+                case 2:
+                    return "ThrustSSC Rocketcar";
+                case 3:
+                    return "Flight Falcon 16";
+                case 4:
+                    return "TGV Duplex Heigh Speed Train";
+                case 5:
+                    return "Dubbeldekker Intercity";
+                case 6:
+                    return "Taxi";
+                case 7:
+                    return "Courier";
+                case 8:
+                    return "Trucking";
+                case 9:
+                    return "Cargo Bike";
+                case 10:
+                    return "On Foot";
             }
             return null;
         }

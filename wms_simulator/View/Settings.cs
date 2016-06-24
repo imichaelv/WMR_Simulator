@@ -29,8 +29,8 @@ namespace wms_simulator.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ServerAddress = "localhost";
-            Properties.Settings.Default.ServerPort = "17822";
+            Properties.Settings.Default.ServerAddress = "http://localhost";
+            Properties.Settings.Default.ServerPort = "17488";
             Properties.Settings.Default.ApiKey = "";
             this.Close();
         }

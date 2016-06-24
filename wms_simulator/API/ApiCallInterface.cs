@@ -5,15 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
+using System.Xml;
 
 namespace wms_simulator.API
 {
-    interface ApiCallInterface
+    public interface ApiCallInterface
     {
-
-        void runRequest();
-        void StartApi();
-        HttpResponseMessage getPage();
-        HttpResponseMessage post();
+        Task<XmlDocument> post(string apiLocation, Request request);
     }
 }

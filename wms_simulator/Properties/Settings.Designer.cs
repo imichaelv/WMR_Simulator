@@ -37,7 +37,7 @@ namespace wms_simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost")]
         public string ServerAddress {
             get {
                 return ((string)(this["ServerAddress"]));
@@ -49,7 +49,7 @@ namespace wms_simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9090")]
+        [global::System.Configuration.DefaultSettingValueAttribute("17488")]
         public string ServerPort {
             get {
                 return ((string)(this["ServerPort"]));

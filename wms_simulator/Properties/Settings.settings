@@ -6,10 +6,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ServerAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">localhost</Value>
+      <Value Profile="(Default)">http://localhost</Value>
     </Setting>
     <Setting Name="ServerPort" Type="System.String" Scope="User">
-      <Value Profile="(Default)">9090</Value>
+      <Value Profile="(Default)">17488</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">wmsuser</Value>

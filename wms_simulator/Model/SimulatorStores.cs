@@ -29,7 +29,7 @@ namespace wms_simulator.Model
         public void addStores(int processSpeed, int simulationSpeed)
         {
             string name = storeNames.getNewStore();
-            Store store = new Store(name,processSpeed,simulationSpeed);
+            Store store = new Store(name,processSpeed,simulationSpeed, storesList.Count + 1);
             Thread newTread = new Thread(new ThreadStart(store.ThreadStart));
             newTread.Start();
             storesList.Add(name, newTread);
